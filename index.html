@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Maile 💜</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: repeating-radial-gradient(
+                circle at center,
+                #e6e6fa,
+                #e6e6fa 20px,
+                #d8bfd8 20px,
+                #d8bfd8 40px
+            );
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+        .slide {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            max-width: 600px;
+            width: 90%;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+        }
+        h1 { color: #8e44ad; font-size: 2.5em; margin-bottom: 10px; }
+        p { color: #444; font-size: 1.2em; line-height: 1.6; }
+        .next-btn {
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: #8e44ad;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .next-btn:hover { background-color: #732d91; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1 -->
+    <div class="slide active" id="slide1">
+        <h1>Happy Birthday, Maile! 🎂</h1>
+        <p>I hope your special day is as beautiful and amazing as you are.</p>
+        <button class="next-btn" onclick="nextSlide(1)">next >></button>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide" id="slide2">
+        <h1>Also... I'm so sorry! 🙈</h1>
+        <p>I want to apologize for getting a little too ahead of myself and asking about marriage so early.</p>
+        <p>I was just so excited and overwhelmed by how incredible you are, but I promise to slow down. No pressure, no rushing—just you, me, and enjoying right now.</p>
+        <button class="next-btn" onclick="nextSlide(2)">next >></button>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide" id="slide3">
+        <p>You mean the world to me, and I just want to celebrate *you* today.</p>
+        <p>Thank you for being so patient with me. I can't wait to make this birthday a great one.</p>
+        <p>Yours truly,<br>Manav</p>
+        <button class="next-btn" onclick="nextSlide(3)">next >></button>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide" id="slide4">
+        <h1>🎟️ BIRTHDAY COUPON 🎟️</h1>
+        <p><strong>Good for:</strong> One perfect birthday date.</p>
+        <p><em>(Terms & Conditions: Absolutely no rings attached!)</em> 😉</p>
+        <button class="next-btn" onclick="location.reload()">< restart ></button>
+    </div>
+
+    <script>
+        function nextSlide(current) {
+            document.getElementById('slide' + current).classList.remove('active');
+            document.getElementById('slide' + (current + 1)).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
